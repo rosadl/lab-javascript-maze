@@ -8,28 +8,33 @@ var Maze = function(map, exit) {
   this._exit = {
     row: exit.row,
     col: exit.col
-  }
-}
+  };
+};
 
-Maze.prototype.turnLeft      = function(){
+Maze.prototype.turnLeft = function() {
+this._miner.dir--;
+if (this._miner.dir==-1) {
+  this._miner.dir=3;
 }
+};
 
-Maze.prototype.turnRight     = function(){
+Maze.prototype.turnRight = function() {
+this._miner.dir++;
+if (this._miner.dir==4) {
+  this._miner.dir=0;
 }
+};
+Maze.prototype.isPathForward = function() {
 
-Maze.prototype.isPathForward = function(){
-}
 
-Maze.prototype.isPathLeft    = function(){
-}
+};
 
-Maze.prototype.isPathRight   = function(){
-}
+Maze.prototype.isPathLeft = function() {}
 
-Maze.prototype.moveForward   = function(){
-}
+Maze.prototype.isPathRight = function() {}
 
-Maze.prototype.notDone       = function(){
-}
+Maze.prototype.moveForward = function() {}
+
+Maze.prototype.notDone = function() {}
 
 module.exports = Maze;
